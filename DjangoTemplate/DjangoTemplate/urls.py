@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     ('^time/$', current_datetime_simple),
     ('^time1/$', current_datetime_sub1),
     ('^time2/$', current_datetime_sub2),
-     #url(r'^admin/', include(admin.site.urls))
+     url(r'^admin/', include(admin.site.urls))
 )
 #urlpatterns = patterns('',
 #    ('^time/$', current_datetime),
