@@ -3,7 +3,7 @@ Created on 2013-5-20
 
 @author: mike
 '''
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 import datetime
 from django.template import Template, Context
 from django.template.loader import get_template
@@ -39,6 +39,7 @@ def current_datetime_sub1(request):
     return render_to_response('sub/current_datetime_1.html', {'current_date': now})
 
 def current_datetime_sub2(request):
-    print("simple model")
+    print("current_datetime_sub2")
     now = datetime.datetime.now()
+    raise Http404
     return render_to_response('sub/current_datetime_2.html', {'current_date': now})
