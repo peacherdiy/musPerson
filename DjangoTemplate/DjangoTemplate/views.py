@@ -41,5 +41,14 @@ def current_datetime_sub1(request):
 def current_datetime_sub2(request):
     print("current_datetime_sub2")
     now = datetime.datetime.now()
-    raise Http404
+    raise Http404()
     return render_to_response('sub/current_datetime_2.html', {'current_date': now})
+
+def year_archive(request, year=2013):
+    print "year : ",year
+    return render_to_response('archive_year.html', {'year': year})
+
+def month_archive(request, year, month,template_name):
+    print "year and month: ",year,month
+    return render_to_response(template_name, {'year': year,'month':month})
+    
